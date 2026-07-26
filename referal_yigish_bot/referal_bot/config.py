@@ -17,4 +17,4 @@ BOT_USERNAME = os.getenv("BOT_USERNAME", "")
 
 # Mini App (Web App) joylashgan HTTPS manzil - deploy qilingandan keyin shu yerga yozing
 # Masalan: https://sizning-bot.onrender.com
-WEBAPP_URL = os.getenv("WEBAPP_URL", "")
+WEBAPP_URL = os.getenv("WEBAPP_URL", "https://fffffffffffffffffffffffffffffff.onrender.com/")
