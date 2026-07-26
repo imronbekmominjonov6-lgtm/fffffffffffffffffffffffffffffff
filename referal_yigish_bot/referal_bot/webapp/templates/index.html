@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Referal Bot</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div id="app">
+  <div id="loading" class="center-box">
+    <div class="spinner"></div>
+    <p>Yuklanmoqda...</p>
+  </div>
+
+  <div id="error-box" class="center-box hidden">
+    <p id="error-text"></p>
+  </div>
+
+  <div id="main-view" class="hidden">
+
+    <nav class="tabbar">
+      <button class="tab-btn active" data-tab="profile">👤 Profil</button>
+      <button class="tab-btn" data-tab="leaderboard">📊 Reyting</button>
+      <button id="admin-tab-btn" class="tab-btn hidden" data-tab="admin">🛠 Admin</button>
+    </nav>
+
+    <section id="tab-profile" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <div class="avatar" id="avatar-letter">?</div>
+          <div>
+            <h2 id="user-name">—</h2>
+            <p class="muted" id="user-rank">Reyting: —</p>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-box">
+            <span class="stat-num" id="stat-count">0</span>
+            <span class="stat-label">Taklif qilinganlar</span>
+          </div>
+        </div>
+        <div id="bonus-progress" class="bonus-box hidden">
+          <p class="muted">🎯 Keyingi mukofotgacha: <b id="bonus-remaining">0</b> ta</p>
+          <div class="progress-bar"><div id="progress-fill" class="progress-fill"></div></div>
+          <p class="muted" id="bonus-reward-text"></p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>🔗 Referal havolangiz</h3>
+        <div class="link-row">
+          <input type="text" id="referral-link-input" readonly>
+          <button id="copy-link-btn" class="btn-small">Nusxalash</button>
+        </div>
+        <button id="share-link-btn" class="btn-primary">📤 Do'stlarga ulashish</button>
+      </div>
+    </section>
+
+    <section id="tab-leaderboard" class="tab-content hidden">
+      <div class="card">
+        <h3>📊 TOP 50 reyting</h3>
+        <div id="leaderboard-list"></div>
+      </div>
+    </section>
+
+    <section id="tab-admin" class="tab-content hidden">
+      <div class="card">
+        <h3>📊 Statistika</h3>
+        <div id="admin-stats" class="stat-row"></div>
+      </div>
+
+      <div class="card">
+        <h3>📺 Majburiy kanallar</h3>
+        <div id="channels-list" class="item-list"></div>
+        <div class="input-row">
+          <input type="text" id="new-channel-input" placeholder="@kanal_username">
+          <button id="add-channel-btn" class="btn-small">Qo'shish</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>🎁 Bonus darajalari</h3>
+        <div id="tiers-list" class="item-list"></div>
+        <div class="input-row">
+          <input type="number" id="new-tier-threshold" placeholder="Nechta taklif">
+          <input type="text" id="new-tier-reward" placeholder="Mukofot matni">
+          <button id="add-tier-btn" class="btn-small">Qo'shish</button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
